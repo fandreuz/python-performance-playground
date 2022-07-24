@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.rcParams.update({'font.size': 25})
+
+matplotlib.rcParams.update({"font.size": 25})
 
 from .benchmarks import do_benchmarks
 
@@ -11,6 +12,14 @@ _kernels = []
 _kernel_labels = []
 
 _steps = None
+
+
+def clear_kernels():
+    global _kernels
+    _kernels = []
+    global _kernel_labels
+    _kernel_labels = []
+
 
 # a decorator to highlight the function to be used to generate data
 def data(steps):
