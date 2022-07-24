@@ -16,8 +16,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install packages
         run: |
-          python3 -m pip install nbconvert black[jupyter] numpy perfplot ipykernel freetype-py
+          python3 -m pip install nbconvert black[jupyter] numpy perfplot ipykernel
           python3 -m pip install .
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.1.1
+      - name: FreeType
+        shell: pwsh
+        run: conda install freetype=2.10.4
       - name: Run black, notebooks and nbconvert
         run: |
           .github/workflows/traverse.sh .
