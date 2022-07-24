@@ -7,8 +7,9 @@ do
         if [ "${file: -6}" == ".ipynb" ] ; then
             black "$file"
 
-            jupyter nbconvert --to notebook --execute "$file" --output "$file"
-            jupyter nbconvert --to markdown "$file" --output README.md
+            python3 -m ipykernel install --user --name python3
+            python3 -m jupyter nbconvert --to notebook --execute "$file" --output "$file"
+            python3 -m jupyter nbconvert --to markdown "$file" --output README.md
         fi
     else
         traverse "${file}"
