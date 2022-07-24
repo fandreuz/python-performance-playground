@@ -1,0 +1,21 @@
+name: Convert notebooks
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  convert:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: nbconvert .ipynb's
+        uses: runsascoded/nbconvert@v1.2
+        with:
+          args: -f -x
