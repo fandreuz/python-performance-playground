@@ -10,12 +10,13 @@ on:
 jobs:
   convert:
     # The type of runner that the job will run on
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v3
       - name: Install packages
         run: |
+          python3 -m pip install --upgrade pip
           python3 -m pip install nbconvert black[jupyter] numpy perfplot ipykernel
           python3 -m pip install .
       - name: Run black, notebooks and nbconvert

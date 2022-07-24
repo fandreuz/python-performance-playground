@@ -33,7 +33,7 @@ def kernel(label):
     return decorator_kernel
 
 
-def plot(target_time_per_measurement=1.e-1):
+def plot(target_time_per_measurement=1.e-2):
     perfplot.show(
         setup=_data_func,
         kernels=_kernels,
