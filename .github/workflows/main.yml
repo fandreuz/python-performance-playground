@@ -1,7 +1,7 @@
 name: Convert notebooks
 
 on:
-  pull_request:
+  push:
     branches: [ "master" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -15,7 +15,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: nbconvert .ipynb's
-        uses: runsascoded/nbconvert@v1.2
-        with:
-          args: -f -x
+      - run: |
+            .github/workflows/traverse.sh
