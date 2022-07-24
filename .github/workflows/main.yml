@@ -14,9 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install nbconvert
-        run: pip install nbconvert
-      - name: Run nbconvert
+      - name: Install packages
+        run: |
+          pip install nbconvert black numpy perfplot
+          pip install .
+      - name: Run black, notebooks and nbconvert
         run: |
           .github/workflows/traverse.sh .
       - name: Push changes
