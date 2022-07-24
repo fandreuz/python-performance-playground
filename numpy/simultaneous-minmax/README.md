@@ -1,38 +1,68 @@
+What's the fastest way to get maximum and minimum of an array? Do we improve performance by calling only one between `np.max` and `np.min`?
+
+
 ```python
 import numpy as np
 
-def minmax(x, axis=None):
-    axis_none = axis is None
-    
-    if axis_none:
-        x = x.flatten()[None]
-        axis = 1
-    
-    y = np.max(x[None, :, :] * np.array([-1, 1])[:, None, None], axis=axis+1)
-    y[0] *= -1
-    
-    if axis_none:
-        return y[:,0]
-    else:
-        return y.T
-
-def minmax2(x, axis=None):
-    return np.concatenate([np.min(x, axis=axis)[...,None], np.max(x, axis=axis)[...,None]], axis=axis)
+from plot_machinery.plot import data, kernel, plot, repeat_count
 ```
 
 
 ```python
-x = np.arange(1000000).reshape(-1,10)
+@kernel()
+def minmax_maxonce(x, axis=None):
+    axis_none = axis is None
 
-%timeit minmax(x)
-%timeit minmax2(x)
+    if axis_none:
+        x = x.flatten()[None]
+        axis = 1
 
-%timeit minmax(x, axis=1)
-%timeit minmax2(x, axis=1)
+    y = np.max(x[None, :, :] * np.array([-1, 1])[:, None, None], axis=axis + 1)
+    y[0] *= -1
+
+    if axis_none:
+        return y[:, 0]
+    else:
+        return y.T
+
+
+@kernel()
+def minmax_both(x, axis=None):
+    return np.concatenate(
+        [np.min(x, axis=axis)[..., None], np.max(x, axis=axis)[..., None]], axis=axis
+    )
 ```
 
-    9.2 ms ± 85 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    1.48 ms ± 26.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
-    13.6 ms ± 86.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    8.75 ms ± 35.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
+```python
+@data(steps=[10, 100, 1000, 10000])
+def scale_rows(step):
+    return np.arange(step * 100).reshape(step, 100), 1
+
+
+plot(logx=True, logy=True, xlabel="Rows", title="X.shape = (*, 100)")
+```
+
+
+    
+![png](README_files/README_3_0.png)
+    
+
+
+
+```python
+@data(steps=[10, 100, 1000, 10000])
+def scale_columns(step):
+    return np.arange(step * 100).reshape(100, step), 1
+
+
+plot(logx=True, logy=True, xlabel="Columns", title="X.shape = (100, *)")
+```
+
+
+    
+![png](README_files/README_4_0.png)
+    
+
+
+Calling both `np.min` and `np.max` is faster.
