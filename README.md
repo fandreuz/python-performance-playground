@@ -22,11 +22,15 @@ repository:
 - Let the bot do its work (after your PR is merged).
 
 ## Disclaimer
-This repository aims at providing a general idea of which approach might perform
-the best in most situation, but I would recommend doing more in-depth
-experiments with the actual data you're going to deal with, on the actual
-architecture you are going to use. Some of the snippets proposed here might fail
-asymptotically, for instance due to memory constraints.
+- Benchmarks in this repository are usually very simple, use dummy data and are
+  in general dried of any meaning except for the pursue for performance.
+- Benchmarks in this repository are assumed to be valid only for common
+  use-cases, industrial or scientific applications might suffer of asymptotic
+  pathological patterns which deserve a customized treatment.
+- I do not claim in any way that benchmarks in this repository are enough to
+  provide a full view of the performance of the methods treated. For instance
+  I do not probe memory access or caching with data tailored to stress the
+  resources. Again, my aim is to see what happens with common use-cases.
 
 ## Contributors
 - Francesco Andreuzzi (CERN, SISSA) -- andreuzzi.francesco@gmail.com
