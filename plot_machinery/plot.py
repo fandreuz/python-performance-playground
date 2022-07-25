@@ -2,8 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
-matplotlib.rcParams.update({"font.size": 25})
-
 from .benchmarks import do_benchmarks
 
 _repeat_func = lambda _: 1000
@@ -69,8 +67,12 @@ def plot(
     create_figure=(20, 8),
     verbose=False,
 ):
+    # enforce font size
+    matplotlib.rcParams.update({"font.size": 25})
     if create_figure:
         plt.figure(figsize=(20, 8))
+    # enforce font size
+    matplotlib.rcParams.update({"font.size": 25})
 
     benchmark = do_benchmarks(
         _steps,
