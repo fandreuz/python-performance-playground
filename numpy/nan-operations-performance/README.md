@@ -18,8 +18,8 @@ z = np.vstack([x, x])
 %timeit z + 2 - np.array([2,20])[None]
 ```
 
-    15.9 ms ± 262 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    16.1 ms ± 239 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+    18.5 ms ± 196 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+    18.2 ms ± 138 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
 
 No.
