@@ -13,6 +13,13 @@ I've collected some of my snippets over a few months, and packed them nicely
 into a repository, along with an accomodating GitHub action which cares about
 running the experiments and doing the plots.
 
+## Content
+| **Directory** | **Content** |
+|:---:|:---:|
+| [`python`](python/) | General snippets in pure Python |
+| [`numpy`](numpy/) | Comparisons among multiple equivalent NumPy (or Python) snippets  |
+| [`dask`](dask/) | Benchmarks of equivalent Dask snippets. |
+
 ## Contributing
 Snippets welcome! Just prepare a PR following the standard format in the
 repository:
