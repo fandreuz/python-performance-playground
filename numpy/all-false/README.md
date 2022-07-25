@@ -1,4 +1,6 @@
-What is the fastest way to achieve something like `np.all_false` (not available in NumPy API).
+## `all_false`
+
+Which is the fastest way to achieve something like `np.all_false`?
 
 
 ```python

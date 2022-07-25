@@ -1,4 +1,7 @@
-What's the fastest way to get maximum and minimum of an array? Do we improve performance by calling only one between `np.max` and `np.min`?
+## Simultaneous min/max
+Which is the fastest way to get maximum and minimum of an array without calling both `np.min` and `np.max`? 
+
+Do we improve performance by calling only one between `np.max` and `np.min`?
 
 
 ```python
