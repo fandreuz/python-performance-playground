@@ -1,4 +1,4 @@
-name: Convert notebooks
+name: Run benchmarks
 
 on:
   push:

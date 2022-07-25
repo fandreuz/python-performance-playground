@@ -1,3 +1,5 @@
+[![Benchmarks](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/main.yml/badge.svg)](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/main.yml)
+
 # python-performance-playground
 A performance analysis repository for small Python snippets.
 
