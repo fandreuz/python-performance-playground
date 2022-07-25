@@ -1,1 +1,1 @@
-*.ipynb -linguist-undetectable
+*.ipynb -linguist-detectable=false
