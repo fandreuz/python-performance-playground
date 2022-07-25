@@ -1,4 +1,6 @@
 [![Benchmarks](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/main.yml/badge.svg)](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/main.yml)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+<img src='https://img.shields.io/badge/Code%20style-Black-%23000000'/>
 
 # python-performance-playground
 A performance analysis repository for small Python snippets.
@@ -13,12 +15,12 @@ I've collected some of my snippets over a few months, and packed them nicely
 into a repository, along with an accomodating GitHub action which cares about
 running the experiments and doing the plots.
 
-## Content
+### Content
 | **Directory** | **Content** |
-|:---:|:---:|
-| [`python`](python/) | General snippets in pure Python |
-| [`numpy`](numpy/) | Comparisons among multiple equivalent NumPy (or Python) snippets  |
-| [`dask`](dask/) | Benchmarks of equivalent Dask snippets. |
+|:---|:---|
+| [`./python/`](python/) | General snippets in pure Python |
+| [`./numpy/`](numpy/) | Comparisons among multiple equivalent NumPy (or Python) snippets  |
+| [`./dask/`](dask/) | Benchmarks of equivalent Dask snippets. |
 
 ## Contributing
 Snippets welcome! Just prepare a PR following the standard format in the
@@ -28,6 +30,11 @@ repository:
 - Provide an `.ipynb` files which runs the experiments (please use the
   annotations `@kernel, @data, ...` like we did for the other snippets)
 - Let the bot do its work (after your PR is merged).
+
+## Examples
+| Slice VS List write in NumPy |     Pseudo-Hankel matrix     |
+| -------------------------------------------------------------- | -------------------------------------------------------------- |
+| [![image](https://user-images.githubusercontent.com/8464342/180768227-b8429aa5-98cc-4a59-8277-8d00854106fb.png)](numpy/write-in-slices) | [![image](https://user-images.githubusercontent.com/8464342/180768655-5caaeb92-bd1c-4900-a2f6-d92a700d0138.png)](numpy/hankel-matrix) |
 
 ## Disclaimer
 - Benchmarks in this repository are usually very simple, use dummy data and are
