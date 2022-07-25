@@ -17,7 +17,7 @@ jobs:
       - name: Install packages
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install nbconvert black[jupyter] numpy perfplot ipykernel
+          python3 -m pip install nbconvert black[jupyter] numpy perfplot ipykernel dask
           python3 -m pip install .
       - name: Run black, notebooks and nbconvert
         run: |
