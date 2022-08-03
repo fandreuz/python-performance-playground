@@ -15,6 +15,19 @@ I've collected some of my snippets over a few months, and packed them nicely
 into a repository, along with an accomodating GitHub action which cares about
 running the experiments and doing the plots.
 
+### Software and hardware
+Benchmarks may vary across Python versions, for this reason we provide plots
+for the latest 3 stable versions:
+| **Python version** | **Branch** |
+|:---|:---|
+| `3.10` | [`master`](https://github.com/fAndreuzzi/python-performance-playground/) |
+| `3.9` | [`python-3.9`](https://github.com/fAndreuzzi/python-performance-playground/tree/python-3.9)  |
+| `3.8` | [`python-3.8`](https://github.com/fAndreuzzi/python-performance-playground/tree/python-3.8) |
+
+Benchmarks run on the GitHub Actions runner `ubuntu-latest`, updated info about
+the hardware details of the runner available
+[here](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources).
+
 ### Content
 | **Directory** | **Content** |
 |:---|:---|
