@@ -1,4 +1,4 @@
-[![Benchmarks](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/main.yml/badge.svg)](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/main.yml)
+[![Benchmarks - Python 3.8](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/python-3.8.yml/badge.svg)](https://github.com/fAndreuzzi/python-performance-playground/actions/workflows/python-3.8.yml)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 <img src='https://img.shields.io/badge/Code%20style-Black-%23000000'/>
 
