@@ -1,6 +1,8 @@
 import timeit
 import numpy as np
 
+N_REPEAT = 20
+
 
 def do_benchmarks(
     steps,
@@ -10,10 +12,13 @@ def do_benchmarks(
     kernel_labels,
     verbose=False,
 ):
-    times = np.empty((len(steps), len(kernels)), dtype=float)
+    times = np.empty((len(steps), len(kernels), 2), dtype=float)
     for idx, step in enumerate(steps):
         data = data_gen_func(step)
+
         number = number_gen_func(step)
+        # adjust number since we use timeit.repeat
+        number = int(np.ceil(number / 10))
 
         if verbose:
             print("Doing step {} with {} repetitions".format(step, number))
@@ -22,10 +27,18 @@ def do_benchmarks(
             if verbose:
                 print("Doing kernel {}".format(kidx))
 
-            times[idx, kidx] = timeit.timeit(
-                "kernel(*data)", globals=locals(), number=number
+            tm = (
+                np.array(
+                    timeit.repeat(
+                        "kernel(*data)",
+                        globals=locals(),
+                        number=number,
+                        repeat=N_REPEAT,
+                    )
+                )
+                / number
             )
-
-        times[idx] /= number
+            times[idx, kidx, 0] = np.mean(tm)
+            times[idx, kidx, 1] = np.var(tm, ddof=1)
 
     return times

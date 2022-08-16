@@ -83,7 +83,15 @@ def plot(
         verbose=verbose,
     )
 
-    plt.plot(_steps, benchmark, "-o", label=_kernel_labels)
+    for kidx, klabel in enumerate(_kernel_labels):
+        plt.errorbar(
+            _steps,
+            benchmark[:, kidx, 0],
+            yerr=benchmark[:, kidx, 1],
+            capsize=8,
+            fmt="-o",
+            label=klabel,
+        )
 
     plt.ylabel("Time (seconds)")
     if xlabel:
