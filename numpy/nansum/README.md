@@ -57,37 +57,37 @@ def repcnt(step):
 plot(logx=True, logy=True, xlabel="Rows", title="X.shape = (*, 100)", verbose=True)
 ```
 
-    Doing step 100 with 10 repetitions
+    Doing step 100 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 500 with 10 repetitions
+    Doing step 500 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 1000 with 10 repetitions
+    Doing step 1000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 5000 with 10 repetitions
+    Doing step 5000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 10000 with 10 repetitions
+    Doing step 10000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 50000 with 10 repetitions
+    Doing step 50000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 100000 with 10 repetitions
+    Doing step 100000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 500000 with 10 repetitions
+    Doing step 500000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 1000000 with 10 repetitions
+    Doing step 1000000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 5000000 with 10 repetitions
+    Doing step 5000000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
-    Doing step 10000000 with 10 repetitions
+    Doing step 10000000 with 1 repetitions
     Doing kernel 0
     Doing kernel 1
 
